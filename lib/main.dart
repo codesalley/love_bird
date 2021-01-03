@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -7,6 +8,8 @@ import 'view/home_screen.dart';
 
 Future<void> main() async {
   //var path = getApplicationDocumentsDirectory();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   await Hive.initFlutter();
   Hive.registerAdapter<Call>(CallAdapter());
   await Hive.openBox<Call>('missedCalls');

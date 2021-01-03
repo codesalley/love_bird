@@ -4,7 +4,7 @@ import 'package:love_bird/modal/callModal.dart';
 
 class GetDataController {
   // get call logs and add to database
-  Future<void> getdata() async {
+  Future<void> getData() async {
     Iterable<CallLogEntry> callLogs = await CallLog.get();
     callLogs.forEach(
       (element) {
