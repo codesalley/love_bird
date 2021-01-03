@@ -5,8 +5,14 @@ import 'package:love_bird/modal/callModal.dart';
 class GetDataController {
   // get call logs and add to database
   Future<void> getData() async {
-    Iterable<CallLogEntry> callLogs = await CallLog.get();
-    callLogs.forEach(
+    DateTime now = DateTime.now();
+
+    int from = now.subtract(Duration(days: 7)).day;
+    int to = now.microsecondsSinceEpoch;
+
+    Iterable<CallLogEntry> allcalls =
+        await CallLog.query(dateFrom: from, dateTo: to);
+    allcalls.forEach(
       (element) {
         //if missed calls
         if (element.callType == CallType.missed) {
@@ -40,7 +46,7 @@ class GetDataController {
     return Call(
       callerName: data.name ?? 'No Name',
       phoneNumber: data.number,
-      callType: data.callType.toString().split('.')[0],
+      callType: data.callType.toString().split('.')[1],
       callDuration: data.duration,
       callTimeStamp: data.timestamp,
     );

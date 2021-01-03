@@ -19,8 +19,10 @@ class HomeScreen extends StatelessWidget {
                 controller.getData();
                 firestoreController.pushToClound();
                 final callLogs = Hive.box<Call>('receivedCalls');
-                print(callLogs.values.elementAt(2).callType);
-                // callLogs.clear();
+                final missedcalls = Hive.box('missedCalls');
+                print(callLogs.values.elementAt(2).callTimeStamp);
+                callLogs.clear();
+                missedcalls.clear();
               },
               child: Text('get Data'),
             ),

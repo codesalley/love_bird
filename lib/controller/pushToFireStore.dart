@@ -9,9 +9,10 @@ class DataBase {
   final callLogs = Hive.box<Call>('receivedCalls');
 
   Future<void> pushToClound() async {
+    CollectionReference fireStoreCalls = firestore.collection('missed-calls');
     if (callLogs.values.isNotEmpty) {
       callLogs.values.forEach((element) async {
-        await firestore.collection('missed-calls').add({
+        await fireStoreCalls.add({
           'date': element.callTimeStamp,
           'duration': element.callDuration,
           'name': element.callerName,
