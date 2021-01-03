@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "802447066515",
+    "project_id": "love-bird-b7580",
+    "storage_bucket": "love-bird-b7580.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802447066515:android:2676b325b24a6a4e8e5466",
+        "android_client_info": {
+          "package_name": "com.codesalley.love_bird"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "802447066515-1gv1p9qjmmi3ljqbtrdm9om4kjl3f6lv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKIb53uxRDRLqbmA439EPELQr3qtD8axY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "802447066515-1gv1p9qjmmi3ljqbtrdm9om4kjl3f6lv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
